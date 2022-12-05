@@ -20,7 +20,8 @@
 
 
 
-       <mapping class="org.javabrains.sanjaya.dto.UserDetails"/>
+       <mapping class="net.codejava.hibernate.Order"/>
+       <mapping class="net.codejava.hibernate.Product"/>
 
     </session-factory>
 </hibernate-configuration>

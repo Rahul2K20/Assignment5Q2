@@ -1,53 +1,49 @@
 package com.main;
 import java.util.Date;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
- 
+
 
 @Entity
-@Table(name = "Order")
+@Table(name = "orders")
 public class Order {
-int id; 
-Date date;
-String customer_name;
+    @Id
+    @Column(name = "id", nullable = false)
+    private Integer id;
 
-@Id
-@GeneratedValue
-@Column(name = "order_id")
-public int getId() {
-	return id;
-}
-public void setId(int id) {
-	this.id = id;
-}
-public Date getDate() {
-	return date;
-}
-public void setDate(Date date) {
-	this.date = date;
-}
-public String getCustomer_name() {
-	return customer_name;
-}
-public void setCustomer_name(String customer_name) {
-	this.customer_name = customer_name;
-} 
+    @Column(name = "date", nullable = false)
+    private Date date;
 
-@ManyToMany(cascade = CascadeType.ALL)
-@JoinTable(
-		name = "order_detail",
-		joinColumns = @JoinColumn(name = "order_id"),
-		inverseJoinColumns = @JoinColumn(name = "product_id")	
-		)
+    @Column(name = "name", nullable = false)
+    private String name;
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+   
 
 }
